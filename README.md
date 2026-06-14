@@ -8,6 +8,7 @@
 - 📢 自动发送到钉钉机器人
 - 💾 记录已发送动态，避免重复推送
 - 🎬 支持视频和文字动态
+- 👥 支持监控多个UP主
 
 ## 快速开始
 
@@ -39,6 +40,15 @@ pip install -r requirements.txt
 DINGTALK_WEBHOOK_URL=https://oapi.dingtalk.com/robot/send?access_token=YOUR_TOKEN
 DINGTALK_SECRET=（可选）
 CHECK_INTERVAL=5
+```
+
+#### 添加UP主
+
+编辑 `config.py`，修改 `BILI_UIDS` 列表：
+
+```python
+# 添加多个UP主
+BILI_UIDS = [1039025435, 773266, 12345678]
 ```
 
 ### 4. 运行
@@ -91,6 +101,10 @@ pm2 save
 ### 如何修改检查频率？
 
 编辑 `.env` 文件中的 `CHECK_INTERVAL` 参数（单位：分钟）
+
+### 如何添加更多UP主？
+
+编辑 `config.py` 文件，修改 `BILI_UIDS` 列表，添加新的UP主UID
 
 ## License
 
